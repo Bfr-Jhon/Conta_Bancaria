@@ -1,13 +1,37 @@
 import read from 'readline-sync';
 import {colors} from './src/util/Colors';
+import { Conta } from './src/model/Conta';
 
 export function main() {
 
     let opcao: number;
 
+    //instanciar objetos da classe Conta
+
+    const c1 = new Conta(1, 1234, "Sofia", 1, 100000.00)
+
+    c1.visualizar();
+
+    // Testes do metodo Sacar
+    console.log("Sacar 100,00", c1.sacar(100.00));
+    console.log("Sacar 2000000", c1.sacar(200000000));
+    console.log("sacar 0 reais" , c1.sacar(0.00));
+
+    //Testes do Metodo Depositar
+    console.log("Depositar -10,00");
+     c1.depositar(-10);
+    
+     console.log("Depositar 500,00");
+    c1.depositar(500);
+
+    // console.log("o titular da conta é ", c1.titular);
+    // console.log("o Saldo da conta é ", c1.saldo);
+
+  
+
     while (true) {
 
-        console.log(colors.bg.black + colors.fg.yellow,
+        console.log(colors.bg.green + colors.fg.yellow,
             "*****************************************************");
         console.log("                                                     ");
         console.log("                BANCO DO BRAZIL COM Z                ");
