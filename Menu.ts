@@ -1,6 +1,6 @@
-import read from 'readline-sync';
 import {colors} from './src/util/Colors';
 import { Conta } from './src/model/Conta';
+import { Input } from './src/model/Input';
 
 export function main() {
 
@@ -32,9 +32,9 @@ export function main() {
     while (true) {
 
         console.log(colors.bg.green + colors.fg.yellow,
-            "*****************************************************");
+             "************************************************************");
         console.log("                                                     ");
-        console.log("                BANCO DO BRAZIL COM Z                ");
+        console.log("                    BANCO CACHE                      ");
         console.log("                                                     ");
         console.log("*****************************************************");
         console.log("                                                     ");
@@ -53,10 +53,10 @@ export function main() {
         colors.reset);
 
         console.log("Entre com a opção desejada: ");
-        opcao = read.questionInt("");
+        opcao = Input.questionInt("");
 
         if (opcao == 9) {
-            console.log(colors.fg.greenstrong,"\nBanco do Brazil com Z - O seu Futuro começa aqui!");
+            console.log(colors.fg.greenstrong,"\nBanco CACHE - O seu Futuro começa aqui!");
             sobre();
             console.log(colors.reset, "");
             process.exit(0);
@@ -66,8 +66,8 @@ export function main() {
             case 1:
                 console.log(colors.fg.whitestrong, 
                     "\n\nCriar Conta\n\n", colors.reset);
-                
-                keyPress()
+
+                keyPress() // apenas para dar uma pausa 
                 break;
             case 2:
                 console.log(colors.fg.whitestrong, 
@@ -134,7 +134,7 @@ function sobre(): void {
 function keyPress(): void {
     console.log(colors.reset, "");
     console.log("\nPressione enter para continuar...");
-    read.prompt();
+   Input.prompt();
 }
 
 main();
