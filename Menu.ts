@@ -1,7 +1,8 @@
 import {colors} from './src/util/Colors';
 import { Conta } from './src/model/Conta';
-import { Input } from './src/model/Input';
+import { Input } from './src/util/Input';
 import { ContaCorrente } from './src/model/ContaCorrente';
+import { ContaPoupanca } from './src/model/ContaPoupanca';
 
 export function main() {
 
@@ -29,16 +30,35 @@ export function main() {
    
     // Testes da classe conta ContaCorrente
 
-    const cc1 = new ContaCorrente(2, 5678, "bianca", 1, 200000, 2000.00);
+    // const cc1 = new ContaCorrente(2, 5678, "bianca", 1, 200000, 2000.00);
     
-    cc1.visualizar();
-    //teste do Metodo Sacar - conta corrente
-    console.log("Sacar 1500,00", cc1.sacar(1000.00));
-    console.log("Sacar 20000,00", cc1.sacar(200000.00));
+    // cc1.visualizar();
+    // //teste do Metodo Sacar - conta corrente
+    // console.log("Sacar 1500,00", cc1.sacar(1000.00));
+    // console.log("Sacar 20000,00", cc1.sacar(200000.00));
 
-     // teste do metodo depositar - conta corrente
-    cc1.depositar(500.00);
-    cc1.visualizar();
+    //  // teste do metodo depositar - conta corrente
+    // cc1.depositar(500.00);
+    // cc1.visualizar();
+
+
+const cp1 = new ContaPoupanca(3, 1234, "Jhonatha", 2, 10000.00, 21) ;
+
+cp1.visualizar();
+
+// teste do Metodo Sacar - conta poupanca
+console.log("Sacar 900", cp1.sacar(1000.00));
+//console.log("Sacar 20000,00", cp1.sacar(200000.00));
+
+
+// teste do metodo depositar - conta poupanca
+cp1.depositar(500.00);
+cp1.visualizar();
+
+
+
+
+
 
     while (true) {
 
