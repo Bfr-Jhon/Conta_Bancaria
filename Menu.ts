@@ -1,33 +1,44 @@
 import {colors} from './src/util/Colors';
 import { Conta } from './src/model/Conta';
 import { Input } from './src/model/Input';
+import { ContaCorrente } from './src/model/ContaCorrente';
 
 export function main() {
 
     let opcao: number;
 
-    //instanciar objetos da classe Conta
+    // //instanciar objetos da classe Conta
 
-    const c1 = new Conta(1, 1234, "Sofia", 1, 100000.00)
+    // const c1 = new Conta(1, 1234, "Sofia", 1, 100000.00)
 
-    c1.visualizar();
+    // c1.visualizar();
 
-    // Testes do metodo Sacar
-    console.log("Sacar 100,00", c1.sacar(100.00));
-    console.log("Sacar 2000000", c1.sacar(200000000));
-    console.log("sacar 0 reais" , c1.sacar(0.00));
+    // // Testes do metodo Sacar
+    // console.log("Sacar 100,00", c1.sacar(100.00));
+    // console.log("Sacar 2000000", c1.sacar(200000000));
+    // console.log("sacar 0 reais" , c1.sacar(0.00));
 
-    //Testes do Metodo Depositar
-    console.log("Depositar -10,00");
-     c1.depositar(-10);
+    // //Testes do Metodo Depositar
+    // console.log("Depositar -10,00");
+    //  c1.depositar(-10);
     
-     console.log("Depositar 500,00");
-    c1.depositar(500);
+    //  console.log("Depositar 500,00");
+    // c1.depositar(500);
+    // Agora nao pode mais usar a classe CONTA pq ela é abstrata
 
-    // console.log("o titular da conta é ", c1.titular);
-    // console.log("o Saldo da conta é ", c1.saldo);
+   
+    // Testes da classe conta ContaCorrente
 
-  
+    const cc1 = new ContaCorrente(2, 5678, "bianca", 1, 200000, 2000.00);
+    
+    cc1.visualizar();
+    //teste do Metodo Sacar - conta corrente
+    console.log("Sacar 1500,00", cc1.sacar(1000.00));
+    console.log("Sacar 20000,00", cc1.sacar(200000.00));
+
+     // teste do metodo depositar - conta corrente
+    cc1.depositar(500.00);
+    cc1.visualizar();
 
     while (true) {
 

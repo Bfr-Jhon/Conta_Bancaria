@@ -1,6 +1,6 @@
 import { colors } from "../util/Colors";
 
-export class Conta {
+export abstract class Conta {
   // atributos da classe Conta
   private _numero: number;
   private _agencia: number;
@@ -71,7 +71,8 @@ export class Conta {
     this._saldo = value;
   }
 
-    // Metodo Auxiliares
+  
+   // Metodo Auxiliares
 
     public sacar(valor: number): boolean {
 
