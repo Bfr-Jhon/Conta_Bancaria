@@ -14,6 +14,9 @@ import * as iconv from 'iconv-lite';
  *
  */
 export class Input {
+    static keyInYN(arg0: string) {
+        throw new Error('Method not implemented.');
+    }
    
     /** Controla se já detectou o encoding (detecta apenas uma vez) */
     private static configurado = false;
