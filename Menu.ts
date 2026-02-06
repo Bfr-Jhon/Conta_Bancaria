@@ -30,30 +30,32 @@ export function main() {
    
     // Testes da classe conta ContaCorrente
 
-    // const cc1 = new ContaCorrente(2, 5678, "bianca", 1, 200000, 2000.00);
+    //  const cc1 = new ContaCorrente(2, 5678, "bianca", 1, 1000, 200.00);
     
     // cc1.visualizar();
     // //teste do Metodo Sacar - conta corrente
-    // console.log("Sacar 1500,00", cc1.sacar(1000.00));
-    // console.log("Sacar 20000,00", cc1.sacar(200000.00));
+    // console.log("Sacar 1200,00", cc1.sacar(1200.00));
+    // console.log("Sacar 200,00", cc1.sacar(200.00));
 
-    //  // teste do metodo depositar - conta corrente
-    // cc1.depositar(500.00);
+    // //  // teste do metodo depositar - conta corrente
+    // // cc1.depositar(500.00);
     // cc1.visualizar();
 
 
-const cp1 = new ContaPoupanca(3, 1234, "Jhonatha", 2, 10000.00, 21) ;
+// Testes da classe ContaPoupanca
+const cp1 = new ContaPoupanca(3, 1234, "Jhonatha", 2, 1000.00, 21) ;
 
 cp1.visualizar();
 
 // teste do Metodo Sacar - conta poupanca
-console.log("Sacar 900", cp1.sacar(1000.00));
-//console.log("Sacar 20000,00", cp1.sacar(200000.00));
-
+console.log("Sacar 900", cp1.sacar(900.00));
+console.log("Sacar 200.00", cp1.sacar(200.00));
 
 // teste do metodo depositar - conta poupanca
 cp1.depositar(500.00);
 cp1.visualizar();
+
+
 
 
 
@@ -87,7 +89,7 @@ cp1.visualizar();
         opcao = Input.questionInt("");
 
         if (opcao == 9) {
-            console.log(colors.fg.greenstrong,"\nBanco CACHE - O seu Futuro começa aqui!");
+            console.log(colors.fg.greenstrong,"\nBanco CA$HE - O seu Futuro começa aqui!");
             sobre();
             console.log(colors.reset, "");
             process.exit(0);

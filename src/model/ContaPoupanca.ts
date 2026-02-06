@@ -31,12 +31,7 @@ export class ContaPoupanca extends Conta {
     public visualizar(): void {
       super.visualizar();
       console.log(`Aniversário da conta: ${this.aniversario}`);
-        const rendera = this.saldo + (this.saldo * 0.05);
-        console.log(
-            `No dia ${this._aniversario}, caso permaneça esse saldo, seu valor com o rendimento de 05% será de: R$ ${rendera.toFixed(2)}`
-        );
+
     }
-
-
 
 }
