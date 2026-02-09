@@ -28,6 +28,24 @@ export class ContaController implements ContaRepository{
 
     }
 
+  procurarPorTitular(titular: string): void {
+    
+    // filtragem dos dados    
+    const buscaPorTitular = this.listaContas.filter(
+            conta => conta.titular.toUpperCase().includes(titular.toUpperCase())
+        );
+
+    // Listagem dos dados Filtrados
+            if(buscaPorTitular.length > 0){
+                buscaPorTitular.forEach( conta => conta.visualizar());
+            }
+            else{
+                console.log("Nenhuma Conta Foi Encontrada! ")
+            }
+    }
+
+
+
 
     cadastrar(conta: Conta): void {
         this.listaContas.push(conta);
@@ -67,24 +85,51 @@ export class ContaController implements ContaRepository{
 
         // Metodos Bancarios
     sacar(numero: number, valor: number): void {
-        throw new Error("Method not implemented.");
+          const buscaConta = this.buscarNoArray(numero);
+        if(buscaConta !== null){
+            if(buscaConta.sacar(valor) === true)
+                console.log(`o saque no valor ${valor} na conta numero ${numero} foi realizado com Sucesso`)
+        }
+            else
+            console.log("\nConta Não Encontrada!! ");
 
 
     }
 
 
     depositar(numero: number, valor: number): void {
-        throw new Error("Method not implemented.");
+         const buscaConta = this.buscarNoArray(numero);
+
+        if (buscaConta !== null){
+            buscaConta.depositar(valor)
+            console.log(`o Deposito no valor ${valor} na conta numero ${numero} foi realizado com Sucesso`)
+        }    
+               
+            else
+            console.log("\nConta Não Encontrada!! ");
+
 
 
     }
 
 
     transferir(numeroOrigem: number, numeroDestino: number, valor: number): void {
-        throw new Error("Method not implemented.");
+        const buscaContaOrigem = this.buscarNoArray(numeroOrigem);
+        const buscaContaDestino = this.buscarNoArray(numeroDestino);
+        
+         if(buscaContaOrigem !== null && buscaContaDestino !== null){
+            if(buscaContaOrigem.sacar(valor) === true){
+                buscaContaDestino.depositar(valor);
+                console.log(`A transferencia no valor ${valor} na conta numero ${numeroOrigem} para a conta numero ${numeroDestino} foi realizado com Sucesso`)
+            }
+        }else
+            console.log("\nConta de origem/destino Não Encontrada!! ");
+
 
 
     }
+
+
     
         // Metodos Auxiliar
 
